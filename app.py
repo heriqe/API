@@ -25,7 +25,7 @@ def pegar_usuario(numero):
 
 @app.route('/usernovo',methods=['POST'])
 def criar_usuario():
-    novo_usuario = request.json
+    novo_usuario = request.get_json()
     print(novo_usuario)
     return jsonify ({
         'user': novo_usuario,
@@ -33,4 +33,3 @@ def criar_usuario():
     
 if __name__ == '__main__':
     app.run(port=3000)
-    
